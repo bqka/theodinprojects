@@ -19,15 +19,15 @@ function playRound(computerSelection, playerSelection){
     let indexComputer = rps.indexOf(computerSelection);
 
     if((indexComputer + 1)%3 == indexPlayer){
-        return "Player Won";
+        return `Player Won! ${playerSelection} beats ${computerSelection}`;
     } else if(indexComputer == indexPlayer){
-        return "Draw";
+        return "Draw :/";
     } else{
-        return "Player Lost";
+        return `Player Lost :( ${computerSelection} beats ${playerSelection}`;
     }
 }
 
 playerSelection = capitalize(getPlayerSelection())
 computerSelection = getComputerChoice()
 
-console.log(computerSelection, playerSelection, playRound(computerSelection, playerSelection));
+console.log(`Computer chose: ${computerSelection}\nYou chose: ${playerSelection}\n${playRound(computerSelection, playerSelection)}`);
